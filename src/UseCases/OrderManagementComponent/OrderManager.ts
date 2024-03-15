@@ -7,6 +7,7 @@ export interface OrderStorageInteractor{
     updateOrder(order: Order | null): Promise<Order>;
     deleteOrder(orderId: number): Promise<void>;
     getOrderByStatus(status: OrderStatus): Promise<Order[]>;
+    getAllOrders(): Promise<Order[]>;
 }
 
 export default class OrderManager{
@@ -44,6 +45,10 @@ export default class OrderManager{
 
     public async getOrderByStatus(status: OrderStatus) {
         return await this._storage.getOrderByStatus(status);
+    }
+
+    public async getAllOrders() {
+        return await this._storage.getAllOrders();
     }
     
 }
