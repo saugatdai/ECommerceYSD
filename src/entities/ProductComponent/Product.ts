@@ -32,7 +32,8 @@ export default class Product {
     private _stockStatus: StockStatus,
     private _categories: ProductCategory[],
     private _images: ProductImage[],
-    private _variations: number[]
+    private _variations: number[],
+    private _wholeSalePrice:number
   ) {
     this._salePrice = 0;
     this._dateOnSaleFrom = new Date();
@@ -47,6 +48,14 @@ export default class Product {
     this._ratingCount = 0;
     this._totalRating = 0;
     this._purchaseNote = "";
+  }
+
+  get wholeSalePrice() {
+    return this._wholeSalePrice;
+  }
+
+  set wholeSalePrice(value) {
+    this._wholeSalePrice = value;
   }
 
   get id() {
