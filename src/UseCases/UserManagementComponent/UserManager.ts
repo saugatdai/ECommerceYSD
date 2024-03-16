@@ -1,16 +1,17 @@
 import User from "../../entities/UserComponent/User";
 
-export interface UserManagerStorageInteractor {
+export interface UserStorageInteractor {
   createUser(user: User | null): Promise<User>;
   getUser(userId: number): Promise<User>;
   updateUser(user: User | null): Promise<User>;
   deleteUser(userId: number): Promise<void>;
+  getAllUsers(): Promise<User[]>;
 }
 
 export default class UserManager {
   constructor(
     private _user: User | null,
-    private _storage: UserManagerStorageInteractor
+    private _storage: UserStorageInteractor
   ) {}
 
   private throwUserNotSetError() {
