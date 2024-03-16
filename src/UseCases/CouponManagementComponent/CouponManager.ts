@@ -5,7 +5,7 @@ export interface CouponStorageInteractor {
   getCoupon(couponId: number): Promise<Coupon>;
   deleteCoupon(couponId: number): Promise<void>;
   updateCoupon(coupon: Coupon | null): Promise<Coupon>;
-  getAllCoupon(): Promise<Coupon[]>;
+  getAllCoupons(): Promise<Coupon[]>;
 }
 
 export default class CouponManager {
@@ -41,7 +41,7 @@ export default class CouponManager {
     }
   }
 
-  public async getAllCoupon() {
-    return await this._storage.getAllCoupon();
+  public async getAllCoupons() {
+    return await this._storage.getAllCoupons();
   }
 }
