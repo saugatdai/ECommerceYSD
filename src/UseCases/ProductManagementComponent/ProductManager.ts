@@ -5,6 +5,7 @@ export interface ProductStorageInteractor {
   getProduct(productId: number): Promise<Product>;
   updateProduct(product: Product | null): Promise<Product>;
   deleteProduct(productId: number): Promise<void>;
+  getAllProducts(): Promise<Product[]>;
 }
 
 export default class ProductManager {

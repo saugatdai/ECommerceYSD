@@ -6,7 +6,7 @@ export default class ProductCategory {
     private _name: string,
     private _slug: string,
     private _description: string,
-    private _images: CategoryImage[]
+    private _image: CategoryImage
   ) {}
 
   get id() {
@@ -42,10 +42,10 @@ export default class ProductCategory {
   }
 
   get images() {
-    return this._images;
+    return this._image;
   }
 
   set images(value) {
-    this._images = value;
+    this._image = value;
   }
 }

@@ -9,6 +9,7 @@ export interface ProductReviewStorageInteractor {
     productReview: ProductReview | null
   ): Promise<ProductReview>;
   deleteProductReview(productReviewId: number): Promise<void>;
+  getAllReviewsOfProduct(productId: number): Promise<ProductReview[]>;
 }
 
 export default class ProductReviewManager {
@@ -47,5 +48,12 @@ export default class ProductReviewManager {
       this._productReview = null;
     }
   }
-  
+
+  public async getAllReviewsOfProduct() {
+    this.throwProductReviewNotSetError();
+    if (this._productReview) {
+      const productReviews = await this._storage.getAllReviewsOfProduct(this._productReview?.productId);
+      return productReviews;
+    }
+  }
 }

@@ -10,8 +10,8 @@ export interface ProductCategoryStorageInteractor {
   ): Promise<ProductCategory>;
 
   deleteProductCategory(productCategoryId: number): Promise<void>;
-
   getProductCategory(productCategoryId: number): Promise<ProductCategory>;
+  getAllCategories(): Promise<ProductCategory[]>;
 }
 
 export default class ProductCategoryManager {

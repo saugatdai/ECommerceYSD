@@ -9,3 +9,9 @@ export enum StockStatus{
     OutOfStock = "outofstock",
     OnBackorder = "onbackorder"
 }
+
+export enum ProductReviewStatus{
+    Approved = "approved",
+    Pending = "pending",
+    Spam = "spam"
+}
